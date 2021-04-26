@@ -1,5 +1,5 @@
 import argparse
-import json
+import jstyleson as json
 from typing import Any
 from typing import Dict
 from typing import List
@@ -27,7 +27,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
 
     retval = 0
     for filename in args.filenames:
-        with open(filename, 'rb') as f:
+        with open(filename, 'r') as f:
             try:
                 json.load(f, object_pairs_hook=raise_duplicate_keys)
             except ValueError as exc:
