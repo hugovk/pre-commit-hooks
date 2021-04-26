@@ -1,11 +1,12 @@
 import argparse
-import jstyleson as json
 from typing import Any
 from typing import Dict
 from typing import List
 from typing import Optional
 from typing import Sequence
 from typing import Tuple
+
+import jstyleson as json
 
 
 def raise_duplicate_keys(
@@ -27,7 +28,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
 
     retval = 0
     for filename in args.filenames:
-        with open(filename, 'r') as f:
+        with open(filename) as f:
             try:
                 json.load(f, object_pairs_hook=raise_duplicate_keys)
             except ValueError as exc:
