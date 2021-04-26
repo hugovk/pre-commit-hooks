@@ -1,5 +1,5 @@
 -   id: check-json-with-comments
-    name: Check JSON
+    name: Check JSON with comments
     description: This hook checks json files for parseable syntax.
     entry: check-json-with-comments
     language: python
