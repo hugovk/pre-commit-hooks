@@ -6,7 +6,7 @@ from testing.util import get_resource_path
 
 @pytest.mark.parametrize(
     ('filename', 'expected_retval'), (
-        ('bad_json.notjson', 1),
+        ('trailing_comma.notjson', 0),
         ('bad_json_latin1.nonjson', 1),
         ('ok_json.json', 0),
         ('duplicate_key_json.json', 1),
